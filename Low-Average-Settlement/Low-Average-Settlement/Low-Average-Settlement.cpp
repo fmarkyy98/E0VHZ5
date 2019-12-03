@@ -53,11 +53,11 @@ int main()
 		{
 			if (i != j && settlements[i].maxMeasurement < settlements[j].averageMeasurement)
 			{
-				index = i;
+				index = i + 1;
 			}
 		}
 	}
-	cout << index + 1 << endl;
+	cout << index << endl;
 
 	return 0;
 }
