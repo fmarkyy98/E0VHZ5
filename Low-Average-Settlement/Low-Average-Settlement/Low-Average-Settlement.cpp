@@ -2,14 +2,16 @@
 
 using namespace std;
 
+const int MAX_N = 1000;
+
 struct Settlement
 {
 	double averageMeasurement = 0;
-	int maxMeasurement;
-	int measurements[1000];
+	int maxMeasurement = INT32_MIN;
+	int measurements[MAX_N] = { 0 };
 };
 
-Settlement settlements[1000];
+Settlement settlements[MAX_N];
 int settlementCount, measurementCount;
 
 int main()
@@ -44,11 +46,18 @@ int main()
 		settlements[i].averageMeasurement /= measurementCount;
 	}
 
-
+	int index = -1;
+	for (int i = 0; i < settlementCount && index == -1; ++i)
+	{
+		for (int j = 0; j < settlementCount && index == -1; ++j)
+		{
+			if (i != j && settlements[i].maxMeasurement < settlements[j].averageMeasurement)
+			{
+				index = i;
+			}
+		}
+	}
+	cout << index + 1 << endl;
 
 	return 0;
 }
-//3 5
-//10 15 12 10 10
-//11 11 11 11 20
-//18 16 12 16 20
