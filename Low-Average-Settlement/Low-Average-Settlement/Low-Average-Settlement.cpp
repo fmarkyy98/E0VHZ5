@@ -14,50 +14,76 @@ struct Settlement
 Settlement settlements[MAX_N];
 int settlementCount, measurementCount;
 
-int main()
+void safetyReading(int& localSettlementCount, int& localMeasurementCount, Settlement localSettlements[MAX_N])
 {
-	cin >> settlementCount >> measurementCount;
-	for (int i = 0; i < settlementCount; ++i)
+	do
 	{
-		for (int j = 0; j < measurementCount; ++j)
+		if (cin.fail())
 		{
-			cin >> settlements[i].measurements[j];
+			cout << "Invalid input value type, restart the input from begining." << endl;
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
 		}
-	}
-
-	for (int i = 0; i < settlementCount; ++i)
-	{
-		settlements[i].maxMeasurement = settlements[i].measurements[0];
-		for (int j = 1; j < measurementCount; ++j)
+		cin >> localSettlementCount >> localMeasurementCount;
+		for (int i = 0; i < localSettlementCount; ++i)
 		{
-			if (settlements[i].measurements[j] > settlements[i].maxMeasurement)
+			for (int j = 0; j < localMeasurementCount; ++j)
 			{
-				settlements[i].maxMeasurement = settlements[i].measurements[j];
+				cin >> localSettlements[i].measurements[j];
+			}
+		}
+	} while (cin.fail());
+}
+
+void calculateMaxAndAvg(int& localSettlementCount, int& localMeasurementCount, Settlement localSettlements[MAX_N])
+{
+	for (int i = 0; i < localSettlementCount; ++i)
+	{
+		localSettlements[i].maxMeasurement = localSettlements[i].measurements[0];
+		for (int j = 1; j < localMeasurementCount; ++j)
+		{
+			if (localSettlements[i].measurements[j] > localSettlements[i].maxMeasurement)
+			{
+				localSettlements[i].maxMeasurement = localSettlements[i].measurements[j];
 			}
 		}
 	}
 
-	for (int i = 0; i < settlementCount; ++i)
+	for (int i = 0; i < localSettlementCount; ++i)
 	{
-		for (int j = 0; j < measurementCount; ++j)
+		for (int j = 0; j < localMeasurementCount; ++j)
 		{
-			settlements[i].averageMeasurement += settlements[i].measurements[j];
+			localSettlements[i].averageMeasurement += localSettlements[i].measurements[j];
 		}
-		settlements[i].averageMeasurement /= measurementCount;
+		localSettlements[i].averageMeasurement /= localMeasurementCount;
 	}
+}
 
-	int index = -1;
-	for (int i = 0; i < settlementCount && index == -1; ++i)
+int indexOfLowAverageSettlement(int& localSettlementCount, int& localMeasurementCount, Settlement localSettlements[MAX_N])
+{
+	int localIndex = -1;
+	for (int i = 0; i < settlementCount && localIndex == -1; ++i)
 	{
-		for (int j = 0; j < settlementCount && index == -1; ++j)
+		for (int j = 0; j < settlementCount && localIndex == -1; ++j)
 		{
 			if (i != j && settlements[i].maxMeasurement < settlements[j].averageMeasurement)
 			{
-				index = i + 1;
+				localIndex = i;
 			}
 		}
 	}
-	cout << index << endl;
+	return localIndex;
+}
+
+int main()
+{
+	safetyReading(settlementCount, measurementCount, settlements);
+
+	calculateMaxAndAvg(settlementCount, measurementCount, settlements);
+
+	int index = indexOfLowAverageSettlement(settlementCount, measurementCount, settlements);
+
+	cout << (index != -1 ? index + 1 : index) << endl;
 
 	return 0;
 }
