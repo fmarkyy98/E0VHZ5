@@ -15,8 +15,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{06ABAB87-4
 	ProjectSection(SolutionItems) = preProject
 		Test\be1.txt = Test\be1.txt
 		Test\be2.txt = Test\be2.txt
+		Test\be3.txt = Test\be3.txt
 		Test\ki1.txt = Test\ki1.txt
 		Test\ki2.txt = Test\ki2.txt
+		Test\ki3.txt = Test\ki3.txt
 	EndProjectSection
 EndProject
 Global
