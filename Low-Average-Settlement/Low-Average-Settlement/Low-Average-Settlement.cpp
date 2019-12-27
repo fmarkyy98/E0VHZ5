@@ -62,15 +62,19 @@ void calculateMaxAndAvg(int localSettlementCount, int localMeasurementCount, Set
 int indexOfLowAverageSettlement(int localSettlementCount, Settlement localSettlements[MAX_N])
 {
 	int localIndex = -1;
-	for (int i = 0; i < localSettlementCount && localIndex == -1; ++i)
+	int i = 0;
+	while (i < localSettlementCount && localIndex == -1)
 	{
-		for (int j = 0; j < localSettlementCount && localIndex == -1; ++j)
+		int j = 0;
+		while (j < localSettlementCount && localIndex == -1)
 		{
 			if (i != j && localSettlements[i].maxMeasurement < localSettlements[j].averageMeasurement)
 			{
 				localIndex = i;
 			}
+			++j;
 		}
+		++i;
 	}
 	return localIndex;
 }
