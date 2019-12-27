@@ -35,7 +35,7 @@ void safetyReading(int& localSettlementCount, int& localMeasurementCount, Settle
 	} while (cin.fail());
 }
 
-void calculateMaxAndAvg(int& localSettlementCount, int& localMeasurementCount, Settlement localSettlements[MAX_N])
+void calculateMaxAndAvg(int localSettlementCount, int localMeasurementCount, Settlement localSettlements[MAX_N])
 {
 	for (int i = 0; i < localSettlementCount; ++i)
 	{
@@ -59,7 +59,7 @@ void calculateMaxAndAvg(int& localSettlementCount, int& localMeasurementCount, S
 	}
 }
 
-int indexOfLowAverageSettlement(int& localSettlementCount, Settlement localSettlements[MAX_N])
+int indexOfLowAverageSettlement(int localSettlementCount, Settlement localSettlements[MAX_N])
 {
 	int localIndex = -1;
 	for (int i = 0; i < localSettlementCount && localIndex == -1; ++i)
