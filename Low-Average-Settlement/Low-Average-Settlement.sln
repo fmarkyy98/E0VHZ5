@@ -5,6 +5,20 @@ VisualStudioVersion = 16.0.29509.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Low-Average-Settlement", "Low-Average-Settlement\Low-Average-Settlement.vcxproj", "{324BAAF5-D3D2-46BC-9324-BE8428F265B5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8126F417-94C0-4C81-994A-3EEC12FA7B8E}"
+	ProjectSection(SolutionItems) = preProject
+		Low-Average-Settlement.exe = Low-Average-Settlement.exe
+		Low-Average-Settlement.obj = Low-Average-Settlement.obj
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{06ABAB87-4A85-4666-BDF0-C1A8A1A92147}"
+	ProjectSection(SolutionItems) = preProject
+		Test\be1.txt = Test\be1.txt
+		Test\be2.txt = Test\be2.txt
+		Test\ki1.txt = Test\ki1.txt
+		Test\ki2.txt = Test\ki2.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -24,6 +38,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{06ABAB87-4A85-4666-BDF0-C1A8A1A92147} = {8126F417-94C0-4C81-994A-3EEC12FA7B8E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ADA9DC4A-31C8-4011-8BAB-FB885B464EC9}
