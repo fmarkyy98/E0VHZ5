@@ -83,7 +83,7 @@ int main()
 
 	int index = indexOfLowAverageSettlement(settlementCount, settlements);
 
-	cout << (index != -1 ? index + 1 : index) << endl;
+	cout << (index != -1 ? index + 1 : -1) << endl;
 
 	return 0;
 }
