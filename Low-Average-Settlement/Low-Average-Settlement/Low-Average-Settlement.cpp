@@ -59,14 +59,14 @@ void calculateMaxAndAvg(int& localSettlementCount, int& localMeasurementCount, S
 	}
 }
 
-int indexOfLowAverageSettlement(int& localSettlementCount, int& localMeasurementCount, Settlement localSettlements[MAX_N])
+int indexOfLowAverageSettlement(int& localSettlementCount, Settlement localSettlements[MAX_N])
 {
 	int localIndex = -1;
-	for (int i = 0; i < settlementCount && localIndex == -1; ++i)
+	for (int i = 0; i < localSettlementCount && localIndex == -1; ++i)
 	{
-		for (int j = 0; j < settlementCount && localIndex == -1; ++j)
+		for (int j = 0; j < localSettlementCount && localIndex == -1; ++j)
 		{
-			if (i != j && settlements[i].maxMeasurement < settlements[j].averageMeasurement)
+			if (i != j && localSettlements[i].maxMeasurement < localSettlements[j].averageMeasurement)
 			{
 				localIndex = i;
 			}
@@ -81,7 +81,7 @@ int main()
 
 	calculateMaxAndAvg(settlementCount, measurementCount, settlements);
 
-	int index = indexOfLowAverageSettlement(settlementCount, measurementCount, settlements);
+	int index = indexOfLowAverageSettlement(settlementCount, settlements);
 
 	cout << (index != -1 ? index + 1 : index) << endl;
 
