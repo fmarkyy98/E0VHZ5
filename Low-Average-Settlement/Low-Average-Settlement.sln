@@ -16,9 +16,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{06ABAB87-4
 		Test\be1.txt = Test\be1.txt
 		Test\be2.txt = Test\be2.txt
 		Test\be3.txt = Test\be3.txt
+		Test\be4.txt = Test\be4.txt
+		Test\be5.txt = Test\be5.txt
+		Test\be6.txt = Test\be6.txt
+		Test\be7.txt = Test\be7.txt
+		Test\be8.txt = Test\be8.txt
 		Test\ki1.txt = Test\ki1.txt
 		Test\ki2.txt = Test\ki2.txt
 		Test\ki3.txt = Test\ki3.txt
+		Test\ki4.txt = Test\ki4.txt
+		Test\ki5.txt = Test\ki5.txt
+		Test\ki6.txt = Test\ki6.txt
+		Test\ki7.txt = Test\ki7.txt
+		Test\ki8.txt = Test\ki8.txt
 	EndProjectSection
 EndProject
 Global
