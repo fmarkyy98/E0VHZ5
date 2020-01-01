@@ -39,7 +39,6 @@ void calculateMaxAndAvg(int localSettlementCount, int localMeasurementCount, Set
 {
 	for (int i = 0; i < localSettlementCount; ++i)
 	{
-		localSettlements[i].maxMeasurement = localSettlements[i].measurements[0];
 		for (int j = 0; j < localMeasurementCount; ++j)
 		{
 			if (localSettlements[i].measurements[j] > localSettlements[i].maxMeasurement)
