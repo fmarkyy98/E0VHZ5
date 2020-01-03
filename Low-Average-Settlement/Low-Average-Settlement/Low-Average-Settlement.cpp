@@ -22,7 +22,7 @@ void safetyReading(int& localSettlementCount, int& localMeasurementCount, Settle
 		{
 			cout << "Invalid input value type, restart the input from begining." << endl;
 			cin.clear();
-			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cin.ignore(65536, '\n');
 		}
 		cin >> localSettlementCount >> localMeasurementCount;
 		for (int i = 0; i < localSettlementCount; ++i)
